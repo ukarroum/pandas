@@ -8758,12 +8758,7 @@ NaN 12.3   33.0
                 data = self._get_bool_data()
             return data
 
-        if numeric_only is not None or (
-            numeric_only is None
-            and axis == 0
-            and not any_object
-            and not self._mgr.any_extension_types
-        ):
+        if numeric_only is not None:
             # For numeric_only non-None and axis non-None, we know
             #  which blocks to use and no try/except is needed.
             #  For numeric_only=None only the case with axis==0 and no object
